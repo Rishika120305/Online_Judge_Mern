@@ -1,6 +1,6 @@
 import { Footer } from 'flowbite-react';
 import { Link } from 'react-router-dom';
-import { BsFacebook, BsInstagram,  BsGithub, BSLinkedln} from 'react-icons/bs';
+import { BsFacebook, BsInstagram,  BsGithub} from 'react-icons/bs';
 export default function FooterCom() {
   return (
     <Footer container className='border border-t-8 border-teal-500'>
@@ -17,7 +17,7 @@ export default function FooterCom() {
                Case
             </Link>
           </div>
-          
+
         </div>
         <Footer.Divider />
         <div className='w-full sm:flex sm:items-center sm:justify-between'>
@@ -29,7 +29,6 @@ export default function FooterCom() {
           <div className="flex gap-6 sm:mt-0 mt-4 sm:justify-center">
             <Footer.Icon href='#' icon={BsFacebook}/>
             <Footer.Icon href='#' icon={BsInstagram}/>
-            <Footer.Icon href='#' icon={BSLinkedln}/>
             <Footer.Icon href='https://github.com/Rishika120305' icon={BsGithub}/>
 
           </div>

@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import SignIn from './pages/SignIn';
-import Projects from './pages/Projects';
+import Problems from './pages/Problems';
 import SignUp from './pages/SignUp';
 import Dashboard from './pages/DashBoard';
 import CodeEditor from './pages/CodeEditor';
@@ -20,6 +20,7 @@ export default function App() {
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='/search' element={<Search />} />
+        <Route path='/problems' element={<Problems/>} />
         <Route path='/code-editor' element={<CodeEditor />} />
         <Route element={<PrivateRoute />}>
           <Route path='/dashboard' element={<Dashboard />} />
