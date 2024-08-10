@@ -1,36 +1,33 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import Problems from './pages/Problems';
 import About from './pages/About';
 import SignIn from './pages/SignIn';
-import Problems from './pages/Problems';
+import DashBoard from './pages/DashBoard';
 import SignUp from './pages/SignUp';
-import Dashboard from './pages/DashBoard';
-import CodeEditor from './pages/CodeEditor';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import PrivateRoute from './components/PrivateRoute';
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Header />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/sign-in' element={<SignIn />} />
-        <Route path='/sign-up' element={<SignUp />} />
-        <Route path='/search' element={<Search />} />
-        <Route path='/problems' element={<Problems/>} />
-        <Route path='/code-editor' element={<CodeEditor />} />
-        <Route element={<PrivateRoute />}>
-          <Route path='/dashboard' element={<Dashboard />} />
-        </Route>
-        
-
-        <Route path='/projects' element={<Projects />} />
-        
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <div className="flex flex-col h-screen">
+      <BrowserRouter>
+        <Header /> {/* Header takes its place */}
+        <div className="flex-grow overflow-auto">
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/sign-in' element={<SignIn />} />
+            <Route path='/sign-up' element={<SignUp />} />
+            <Route element={<PrivateRoute />}>
+              <Route path='/dashboard' element={<DashBoard />} />
+            </Route>
+            <Route path='/problems' element={<Problems />} />
+          </Routes>
+        </div>
+        <Footer /> {/* Footer takes its place */}
+      </BrowserRouter>
+    </div>
   );
 }
